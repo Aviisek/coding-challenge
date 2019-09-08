@@ -10,7 +10,24 @@ public class DetectLoopInLinkedList<E> {
         head = newNode;
     }
 
+    int lengthOfTheLoop(){
+        Node<E> n = startingNodeLoop();
+        if(n == null) return -1;
+
+        int count = 1;
+        Node<E> x = n;
+
+        while((x=x.next) != n) {
+            count++;
+        }
+        return count;
+    }
+
     boolean detectLoop(){
+        return startingNodeLoop() != null;
+    }
+
+    private Node<E> startingNodeLoop() {
         Node<E> x1 = head;
         Node<E> x2 = head;
 
@@ -18,10 +35,10 @@ public class DetectLoopInLinkedList<E> {
             x1 = x1.next;
             x2 = x2.next.next;
             if(x1.equals(x2)){
-                return true;
+                return x1;
             }
         }
-        return false;
+        return null;
     }
 
     @Override
@@ -30,6 +47,7 @@ public class DetectLoopInLinkedList<E> {
 
         Node<E> n = head;
         while (n != null){
+            System.out.println(n.element);
             sb.append(n.element).append(" ");
             n = n.next;
         }
@@ -60,5 +78,7 @@ class Main {
         lList.head.next.next.next.next = lList.head;
 
         System.out.println(lList.detectLoop());
+        System.out.println(lList.lengthOfTheLoop());
+        //System.out.println(lList);
     }
 }
