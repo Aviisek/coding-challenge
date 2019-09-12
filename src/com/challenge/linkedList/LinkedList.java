@@ -1,4 +1,4 @@
-package com.challenge;
+package com.challenge.linkedList;
 
 public class LinkedList<E> {
 

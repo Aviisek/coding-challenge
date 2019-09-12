@@ -1,4 +1,4 @@
-package com.challenge;
+package com.challenge.stack;
 
 public class StackUsingLinkedList<E> {
 
