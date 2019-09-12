@@ -3,6 +3,8 @@ package com.challenge.stack;
 public class StackWithCurrentMaxValue<E extends Number> {
 
     private Node<Number> first;
+    //can also be achieved using two stacks,
+    // one to store all of the items and a second stack to store the maximums.
     private Node<Number> maxNode;
 
     private int size;
