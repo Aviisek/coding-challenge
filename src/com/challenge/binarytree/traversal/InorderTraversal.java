@@ -1,4 +1,4 @@
-package com.challenge.binarytree;
+package com.challenge.binarytree.traversal;
 
 /*
 Given a binary tree, return the inorder traversal of its nodes' values.
